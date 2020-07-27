@@ -1,0 +1,92 @@
+echo "Removing default project"
+
+# flow types
+rm -rf src/flow/base/context/* src/flow/c*
+
+# app
+  # REMOVE
+rm -rf src/js/base/_context/constants/reducers/* src/js/base/_context/actions/* src/js/base/_context/hooks/* src/js/base/_context/initializers/* src/js/base/_context/reducers/* src/js/base/components/* src/js/base/containers/*.js src/js/base/utils/*
+
+  # UPDATE
+cat >src/js/base/_context/constants/app/base.json <<EOL
+{
+  "routes" : {
+    "/": "/"
+  }
+}
+EOL
+
+cat >src/js/base/Root.js <<EOL
+import React from 'react'
+import Routes from './Routes'
+
+const Root = () => <Routes />
+
+Root.displayName = 'Root'
+export default Root
+EOL
+
+cat >src/js/base/Routes.js <<EOL
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { routes } from './_context/constants/app/base.json'
+import App from './App'
+
+const Routes = (props:React\$Router) => {
+  return (<App>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path={routes['/']}>
+          <div>Hello World</div>
+        </Route>
+        <Route>
+          <div>404</div>
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </App>)
+}
+Routes.displayName = 'Routes'
+export default Routes
+EOL
+
+cat >manifest.webmanifest <<EOL
+{
+  "short_name": "",
+  "name": "",
+  "description": "",
+  "scope": "",
+  "start_url": "",
+  "background_color": "",
+  "display": "",
+  "theme_color": "",
+  "icons": [
+    {
+      "src": "",
+      "type": "",
+      "sizes": ""
+    },
+    {
+      "src": "",
+      "type": "",
+      "sizes": ""
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "",
+      "short_name": "",
+      "description": "",
+      "url": "",
+      "icons": [{
+        "src": "",
+        "sizes": ""
+      }]
+    }
+  ]
+}
+EOL
+
+rm structure
+
+echo "default project removed"

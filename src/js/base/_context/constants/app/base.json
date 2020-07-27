@@ -1,0 +1,8 @@
+{
+  "routes" : {
+    "/":"/",
+    "DOM_REF_CUSTOM_HOOK": "/dom-ref-custom-hook",
+    "STATE_EXAMPLE": "/state-example/:rnd",
+    "USE_EFFECT_REF": "/use-effect-ref"
+  }
+}

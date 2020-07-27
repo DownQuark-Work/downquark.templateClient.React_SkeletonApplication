@@ -1,0 +1,49 @@
+[include]
+
+[ignore]
+.*/\.*/.*
+<PROJECT_ROOT>/\.\w*
+<PROJECT_ROOT>/configs/*
+<PROJECT_ROOT>/exports/*
+<PROJECT_ROOT>/node_modules/*
+<PROJECT_ROOT>/validators
+<PROJECT_ROOT>/validators
+
+[libs]
+./validators/flow/flow-typed
+
+[untyped]
+
+[options]
+all=true
+emoji=true
+
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+esproposal.export_star_as=enable
+esproposal.optional_chaining=enable
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.jsx
+💩module.file_ext=.css
+💩module.file_ext=.scss
+💩module.name_mapper='.*\(.s?css\)' -> 'empty/object'
+💩 Below is for use with webpack
+💩 module.name_mapper='.*\(png|svg|jpe?g|gif|ico\)$' -> '<PROJECT_ROOT>/flow-typed/stubs/npm/file-loader_vx.x.x.js'
+💩 suppress_comment=$FlowBrokeIt
+suppress_type=$FlowBrokeIt
+suppress_type=$FlowCurrentBranch
+suppress_type=$FlowES6Bug
+suppress_type=$FlowFixMe
+suppress_type=$FlowFixMeProps
+suppress_type=$FlowFixMeState
+suppress_type=$FlowIssue
+suppress_type=$FlowNonIssue
+suppress_type=$FlowReactBug
+suppress_type=$FlowTODO
+suppress_type=React$Context
+suppress_type=React$Ref
+suppress_type=React$Router
+
+💩module.system=haste
+💩munge_underscores=true

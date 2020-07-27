@@ -1,0 +1,29 @@
+.DS*
+
+# Compiled
+src/assets/styles/css
+exports/.cache/**/
+exports/_deploy/**/
+exports/logs/**/
+validators/flow/flow-typed/stubs/
+
+# Logs
+*.log
+# verify *.log covers the following then remove:
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+
+# Modules
+node_modules/
+
+# Optional cache directories
+# .cache is parcel-bundler cache (https://parceljs.org/)
+.eslintcache
+.npm
+
+# Optional private notes directory
+_notes/.ignored/
+
+# Yarn Integrity file
+.yarn-integrity

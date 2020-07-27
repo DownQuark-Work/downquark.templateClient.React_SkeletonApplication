@@ -1,0 +1,84 @@
+{
+  "name": "@downquark/template~react-application",
+  "version": "0.0.1-0",
+  "description": "DownQuark's Template for React Application",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DownQuark-Work/downquark.template.React_SkeletonApplication.git"
+  },
+  "keywords": [
+    "downquark",
+    "javascript",
+    "utilities",
+    "prototype",
+    "snippets",
+    "TAP-100"
+  ],
+  "author": "dq-mlnck",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/DownQuark-Work/downquark.template.React_SkeletonApplication/issues"
+  },
+  "homepage": "https://github.com/DownQuark-Work/downquark.template.React_SkeletonApplication#readme",
+  "main": "index.js",
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
+  "scripts": {
+    "start": "yarn dev",
+    "dev": "parcel -p 1313 index.html -d exports/_deploy/dev --cache-dir exports/.cache/parcel/deploy/dev",
+    "dev:build": "NODE_ENV=development parcel build index.html -d exports/devbuild --no-minify --cache-dir exports/.cache/parcel/build",
+    "build": "parcel build index.html -d exports/_deploy --cache-dir exports/.cache/parcel/deploy",
+    "ft:info": "USAGE: yarn /ft[\\.]?/ package-name@version.x.x",
+    "ft": "flow-typed install -l validators/flow/flow-typed/stubs",
+    "fts": "flow-typed search",
+    "ftst": "flow-typed create-stub -l validators/flow/flow-typed/downquark",
+    "lint": "eslint -c configs/eslintrc.js --ignore-path configs/.eslintignore",
+    "noflow": "flow-remove-types --all src/js -d exports/flowless",
+    "posttestpublish": "tap --coverage-report=text-lcov | codecov -t $INSERT_NEW_CODECOV_ENV_VAR",
+    "postinstall": "yarn flow-typed install -l validators/flow/flow-typed/stubs",
+    "reactHotReloaderBug": "To remove the console bug casused by the default react-dom use this command: yarn add react-dom@npm:@hot-loader/react-dom",
+    "test": "tap --rcfile=configs/.taprc --debug --strict",
+    "testpublish": "tap --rcfile=configs/.taprc --strict"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "npm:@hot-loader/react-dom",
+    "react-hot-loader": "^4.12.21",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-syntax-optional-chaining": "^7.8.3",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-flow": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-transform-styletron-display-name": "^1.1.4",
+    "codecov": "^3.7.2",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-erb": "^1.0.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-flowtype-errors": "^4.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.129.0",
+    "flow-remove-types": "^2.129.0",
+    "flow-typed": "^3.2.0",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
+    "tap": "^14.10.8"
+  },
+  "resolutions": {
+    "flow-typed/semver": "7.1.3"
+  }
+}

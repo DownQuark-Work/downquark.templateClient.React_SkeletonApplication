@@ -1,0 +1,12 @@
+branches: 85
+check-coverage: true
+comments: true
+debug: true
+flow: true
+functions: 95
+lines: 95
+nyc-arg: [--temp-dir=exports/logs/coverage,--report-dir=exports/logs/coverage]
+nyc-help: false
+output-dir: exports/logs/coverage/raw-tests
+output-file: exports/logs/coverage/raw-tests/compiled.tap
+statements: 95

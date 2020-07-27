@@ -1,0 +1,34 @@
+{
+  "short_name": "dq~RAT",
+  "name": "DownQuark React Application Template",
+  "description": "DownQuark's Template for React Application",
+  "scope": "/",
+  "start_url": "/?source=pwa",
+  "background_color": "#000000",
+  "display": "browser",
+  "theme_color": "#AC1122",
+  "icons": [
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "DownQuark App",
+      "short_name": "dq",
+      "description": "Applicatoin",
+      "url": "/dq?source=pwa",
+      "icons": [{
+        "src": "/images/today.png",
+        "sizes": "192x192"
+      }]
+    }
+  ]
+}
