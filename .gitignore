@@ -8,11 +8,7 @@ exports/logs/**/
 validators/flow/flow-typed/stubs/
 
 # Logs
-*.log
-# verify *.log covers the following then remove:
-# npm-debug.log*
-# yarn-debug.log*
-# yarn-error.log*
+*.log*
 
 # Modules
 node_modules/
