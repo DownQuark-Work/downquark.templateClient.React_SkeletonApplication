@@ -27,7 +27,9 @@ const StateExampleContainer = ({match}:React$Router) =>
         <li>Date set by <i>useContext(RootContext)</i>:
               <ul><li>{RootCntxt.Root.DATE.toString()}</li></ul>
         </li>
+        <li></li>
       </ul>
+      <p>bye</p>
       <hr />
       <hr />
       <button onClick={() => {
