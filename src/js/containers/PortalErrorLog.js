@@ -1,17 +1,15 @@
-import React, { useContext } from 'react'
+import React, {useState} from 'react';
+import Portal from '../components/portal'
 
-const ErrBoundary = () => {}
-const Logger= () => {}
-const PortalContainer = () =>
+const PortalErrorLog = () =>
 {
-  return (
-    <div>
-      Portal
-    </div>
-  )
+  const [displayPortal, setDisplayPortal] = useState(false)
 
-
+  return (<div>
+    <br/><br/><button type="button" onClick={()=>setDisplayPortal(!displayPortal)}>Toggle Portal</button><br/>
+    {displayPortal && <Portal id="portal"><p>I am INSIDE A PORTAL!</p></Portal>}
+  </div>)
 }
-PortalContainer.displayName = 'PortalContainer'
+PortalErrorLog.displayName = 'PortalErrorLogPage'
 
-export default PortalContainer
+export default PortalErrorLog

@@ -42,6 +42,7 @@ suppress_type=$FlowNonIssue
 suppress_type=$FlowReactBug
 suppress_type=$FlowTODO
 suppress_type=React$Context
+suppress_type=React$DOM
 suppress_type=React$Ref
 suppress_type=React$Router
 
