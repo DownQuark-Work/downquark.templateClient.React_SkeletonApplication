@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Portal from './_HOC/portal'
-import {ErrorBoundary} from './_HOC/error_boundary'
+import Portal from '../utils/_hoc/portal'
+import {ErrorBoundary} from '../utils/_hoc/error_boundary'
 
 const PortalErrorButton = () => 
 {
