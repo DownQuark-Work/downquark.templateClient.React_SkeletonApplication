@@ -8,7 +8,8 @@ import usePortal from './_context/hooks/portal'
  *   <p>PORTAL</p>
  * </Portal>
  */
-const Portal = ({ id, children }) => {
+type Props = {id:string, children:React$Node}
+const Portal:(Props) => function = ({ id, children }) => {
   const target = usePortal(id);
   return createPortal(
     children,
