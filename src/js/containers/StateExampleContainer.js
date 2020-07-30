@@ -1,3 +1,5 @@
+import type {Match} from 'react-router-dom'
+
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -5,14 +7,7 @@ import {RootContext} from '../base/Root'
 import {UPDATE_ACTION} from '../base/_context/constants/reducers/root'
 import Rndm from '../components/random'
 
-type urlMatch = {
-  isExact: boolean,
-  params: {rnd: string},
-  path: string,
-  url: string
-}
-
-const StateExampleContainer = ({match}:React$Router) =>
+const StateExampleContainer = ({match}: {match: Match}) =>
 {
   const rnd = match?.params?.rnd
   const {RootCntxt, RootCntxtDispatch} = useContext(RootContext)
