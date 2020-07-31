@@ -42,7 +42,7 @@
     "posttestpublish": "tap --coverage-report=text-lcov | codecov -t $INSERT_NEW_CODECOV_ENV_VAR",
     "postinstall": "yarn flow-typed install -l validators/flow/flow-typed/stubs",
     "reactHotReloaderBug": "To remove the console bug casused by the default react-dom use this command: yarn add react-dom@npm:@hot-loader/react-dom",
-    "test": "tap --rcfile=configs/.taprc --debug --strict",
+    "test": "jest",
     "testpublish": "tap --rcfile=configs/.taprc --strict"
   },
   "dependencies": {
