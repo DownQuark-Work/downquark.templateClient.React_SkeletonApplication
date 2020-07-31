@@ -4,7 +4,7 @@ type Props = {
   children: React$Node,
   page:string
 }
-const NavLink = (props:Props):React$Node => {
+const NavLink:React$StatelessFunctionalComponent<Props> = (props:Props):React$Element<'a'> => {
   const {children, page} = props
   const [hovered, setHovered]:[bool,((bool=>bool)|bool)=>void] = useState(false)
 
