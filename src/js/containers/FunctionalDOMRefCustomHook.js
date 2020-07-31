@@ -77,17 +77,17 @@ const DetailsSummaryForwardRef = () =>
 
 const ImperativeButton = React.forwardRef((props, forwardedRef) => {
   const btnDomRef:React$Ref = useRef(null); //this links the ImperativeButton Functional Component to the DOM
-  useImperativeHandle(forwardedRef, ()=>({ //the useImperativeHandle bridges the functional component(s) to the DOM
+  useImperativeHandle<any>(forwardedRef, ()=>({ //the useImperativeHandle bridges the functional component(s) to the DOM
     start:() => { console.log('you can do anything you want to the element', btnDomRef) },
     end:() => { console.log('as long as it is handled inside the imperative handle') },
     isEnabled:() => { if(btnDomRef.current.disabled){btnDomRef.current.disabled=!props.isEnabled}; console.log('See?',btnDomRef.current.disabled) },
-    click:() => {btnDomRef.click()}
+    click:() => {btnDomRef.current.click()}
   }));
   return <button ref={btnDomRef} onClick={() =>props.listHook()}>{props.isEnabled ? 'add list item' : 'enter text above'}</button>
 })
 
 const ListForm = () =>
-{
+{ 
   return (<>
     <ListInputUseRef field='Name' />
     <DetailsSummaryForwardRef />
@@ -116,11 +116,12 @@ const ListManager = () =>
   const btnRef = React.useRef(null)// this gets passed as `ref` to  link ListManager to the ImperativeButton functional component (NOT the dom)
 
   const addToList = (s) => {
-    //TODO: This is a skeleton template so probably will not complete
+    console.log('This is a skeleton template so will not complete')
+    if(btnRef.current){ btnRef.current.start(); btnRef.current.end(); btnRef.current.isEnabled(); }
   }
   const isEnabled = useCustomHookToRenderDataList('')
   return (<div>
-    <h2>Example of Refs in Functional Components and a Custom Hook</h2>
+    <h2>Example of Refs in Functional Components and a <i onClick={()=>{btnRef.current && btnRef.current.click()}}>Custom Hook</i></h2>
     <ListForm />
     <ImperativeButton ref={btnRef} isEnabled={false} listHook={addToList} />
     <hr/>

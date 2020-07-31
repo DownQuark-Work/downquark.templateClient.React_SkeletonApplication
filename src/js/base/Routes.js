@@ -9,8 +9,7 @@ import PortErrLog from '../containers/PortalErrorLog'
 import StateExampleContainer from '../containers/StateExampleContainer'
 import UseEffectRefPage from '../containers/UseEffectRef'
 
-const Routes = (props:React$Router) => {
-  const routeArr = []
+const Routes = ():React$Node => {
   return (<App>
     <BrowserRouter>
       <Nav/>

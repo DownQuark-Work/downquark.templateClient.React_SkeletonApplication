@@ -1,24 +1,33 @@
-import * as React from 'react'
+// @flow
+import type { ContextReducerAppType } from '../../flow/base/context/ReducerTypes'
+import React, {useDebugValue, useReducer} from 'react'
+
+import AppReducer from './_context/reducers'
+import appContextInitial from './_context/initializers'
+
+export const AppContext:{
+              Provider: React$ComponentType<{
+                value: {AppCntxt:ContextReducerAppType, AppCntxtDispatch:any},
+                children?: React$Node,
+              }>,
+              Consumer: React$ComponentType<{ children: (value: {AppCntxt:ContextReducerAppType, AppCntxtDispatch:<T:Action>(T)=>any}) => ?React$Node, ... }>,
+              displayName?: string,
+            } = React.createContext(appContextInitial)
 
 type Props = {
-  children: React.Node
+  children: React$Node
 }
 
-const App = (props: Props) =>
+const App = (props: Props): React$Node =>
 {
   const { children } = props
-
-/* This filie is not a pointless abstraction 
-  makes it easy for things like:
-  <>
-    <Modal/>
-    {children}
-    <FullScreenVideoBackground/>
-  </>
-  ...etc
-*/
-
-  return <React.StrictMode><>{children}</></React.StrictMode>
+  
+  const [AppCntxt, AppCntxtDispatch]:[ContextReducerAppType, <T:Action>(T)=>any] = useReducer(AppReducer, appContextInitial)
+  return <React.StrictMode>
+          <AppContext.Provider value={{ AppCntxt, AppCntxtDispatch }}>
+            {children}
+          </AppContext.Provider>
+        </React.StrictMode>
 }
 App.displayName = 'App'
 

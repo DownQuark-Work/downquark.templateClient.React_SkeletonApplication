@@ -3,14 +3,14 @@ import type {Match} from 'react-router-dom'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import {RootContext} from '../base/Root'
+import {AppContext} from '../base/App'
 import {UPDATE_ACTION} from '../base/_context/constants/reducers/root'
 import Rndm from '../components/random'
 
 const StateExampleContainer = ({match}: {match: Match}) =>
 {
   const rnd = match?.params?.rnd
-  const {RootCntxt, RootCntxtDispatch} = useContext(RootContext)
+  const {AppCntxt, AppCntxtDispatch} = useContext(AppContext)
 
   return (
     <div>
@@ -19,8 +19,8 @@ const StateExampleContainer = ({match}: {match: Match}) =>
         <li>This value is taken from the url: {rnd}</li>
         <li>A child component is nested here:
               <ul><li>[<Rndm/>]</li></ul></li>
-        <li>Date set by <i>useContext(RootContext)</i>:
-              <ul><li>{RootCntxt.Root.DATE.toString()}</li></ul>
+        <li>Date set by <i>useContext(AppContext)</i>:
+              <ul><li>{AppCntxt.Root.DATE.toString()}</li></ul>
         </li>
         <li></li>
       </ul>
@@ -28,8 +28,8 @@ const StateExampleContainer = ({match}: {match: Match}) =>
       <hr />
       <hr />
       <button onClick={() => {
-        RootCntxtDispatch({type:UPDATE_ACTION, payload:null})}}>
-          update the RootContext by using a reducer and watch the state change
+        AppCntxtDispatch({type:UPDATE_ACTION, payload:null})}}>
+          update the AppContext by using a reducer and watch the state change
       </button>
       <br/>The time reported on both instances above will update on button click
     </div>

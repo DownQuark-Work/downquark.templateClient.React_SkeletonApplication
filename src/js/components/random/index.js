@@ -1,14 +1,14 @@
 import React, { useContext, useRef, useState } from 'react'
-import {RootContext} from '../../base/Root'
+import {AppContext} from '../../base/App'
 
 
 const RandomNest = () => {
   return (<>
-            { !!RootContext && <RootContext.Consumer>
-              {({RootCntxt, RootCntxtDispatch}) => (
-                <span>Date set by <i>&lt;RootContext.Consumer&gt;</i>: {RootCntxt.Root.DATE.toString()}</span>
+            { !!AppContext && <AppContext.Consumer>
+              {({AppCntxt, AppCntxtDispatch}) => (
+                <span>Date set by <i>&lt;AppContext.Consumer&gt;</i>: {AppCntxt.Root.DATE.toString()}</span>
               )}
-            </RootContext.Consumer> }
+            </AppContext.Consumer> }
           </>)
   }
 
