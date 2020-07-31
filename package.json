@@ -46,6 +46,7 @@
     "testpublish": "tap --rcfile=configs/.taprc --strict"
   },
   "dependencies": {
+    "@downquark/proto-snips": "^0.0.1-1",
     "react": "^16.13.1",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.12.21",

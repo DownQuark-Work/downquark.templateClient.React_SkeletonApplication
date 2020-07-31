@@ -5,6 +5,8 @@ import React, {useDebugValue, useReducer} from 'react'
 import AppReducer from './_context/reducers'
 import appContextInitial from './_context/initializers'
 
+const ProtoSnips = require('@downquark/proto-snips').Defaults()
+
 export const AppContext:{
               Provider: React$ComponentType<{
                 value: {AppCntxt:ContextReducerAppType, AppCntxtDispatch:any},
