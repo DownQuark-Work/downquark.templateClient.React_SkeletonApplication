@@ -4,6 +4,7 @@
     "DOM_REF_CUSTOM_HOOK": "/dom-ref-custom-hook",
     "PORTAL_ERR_LOG": "/portal-error-log",
     "STATE_EXAMPLE": "/state-example/:rnd",
-    "USE_EFFECT_REF": "/use-effect-ref"
+    "USE_EFFECT_REF": "/use-effect-ref",
+    "CONCURRENT_MODE": "/concurrent-mode"
   }
 }

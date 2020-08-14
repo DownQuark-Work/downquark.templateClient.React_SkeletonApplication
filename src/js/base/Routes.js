@@ -8,6 +8,7 @@ import ListManager from '../containers/FunctionalDOMRefCustomHook'
 import PortErrLog from '../containers/PortalErrorLog'
 import StateExampleContainer from '../containers/StateExampleContainer'
 import UseEffectRefPage from '../containers/UseEffectRef'
+import ConcurrentModeContainer from '../containers/ConcurrentModeContainer'
 
 const Routes = ():React$Node => {
   return (<App>
@@ -21,6 +22,7 @@ const Routes = ():React$Node => {
         <Route path={routes.STATE_EXAMPLE} component={StateExampleContainer} />
         <Route path={routes.DOM_REF_CUSTOM_HOOK} component={ListManager} />
         <Route path={routes.USE_EFFECT_REF} component={UseEffectRefPage} />
+        <Route path={routes.CONCURRENT_MODE} component={ConcurrentModeContainer} />
         <Route>
           <div>404</div>
         </Route>

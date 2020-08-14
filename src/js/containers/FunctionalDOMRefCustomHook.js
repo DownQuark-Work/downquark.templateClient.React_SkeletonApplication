@@ -11,11 +11,11 @@ const useCustomHookToRenderDataList:$FlowTODO = (txt) => {
       add: useCallback(a => setValue(v => [...v, a])),
       clear: useCallback(() => setValue(() => [])),
       removeById: useCallback(id =>
-        setValue(arr => (arr:any).filter(v => v && v.id !== id))
+        setValue(arr => (arr).filter(v => v && v.id !== id))
       ),
       removeIndex: useCallback(index =>
         setValue(v => {
-          (v:any).splice(index, 1);
+          (v).splice(index, 1);
           return v;
         })
       )
@@ -77,7 +77,7 @@ const DetailsSummaryForwardRef = () =>
 
 const ImperativeButton = React.forwardRef((props, forwardedRef) => {
   const btnDomRef:React$Ref = useRef(null); //this links the ImperativeButton Functional Component to the DOM
-  useImperativeHandle<any>(forwardedRef, ()=>({ //the useImperativeHandle bridges the functional component(s) to the DOM
+  useImperativeHandle:Array<{}>(forwardedRef, ()=>({ //the useImperativeHandle bridges the functional component(s) to the DOM
     start:() => { console.log('you can do anything you want to the element', btnDomRef) },
     end:() => { console.log('as long as it is handled inside the imperative handle') },
     isEnabled:() => { if(btnDomRef.current.disabled){btnDomRef.current.disabled=!props.isEnabled}; console.log('See?',btnDomRef.current.disabled) },
